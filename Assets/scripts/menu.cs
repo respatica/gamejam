@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class menu : MonoBehaviour
 {
+    public GameObject menuPanel;
+    public bool f=true;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,11 +16,14 @@ public class menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown("escape")){
+           menuPanel.SetActive(f);
+           f=!f;
+        }
     }
     public void Mainmenu()
         {
-            SceneManager.LoadScene("startmenu", LoadSceneMode.Single);
+            SceneManager.LoadScene("start menu", LoadSceneMode.Single);
         }
     public void exitGame()
         {
