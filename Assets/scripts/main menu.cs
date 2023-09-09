@@ -18,6 +18,7 @@ public class mainmenu : MonoBehaviour
     }
     public void StartNewGame()
         {
+            print("button clicked");
             SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
         }
 }
