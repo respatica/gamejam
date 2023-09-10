@@ -18,6 +18,10 @@ public class ballons : MonoBehaviour
     public int fallen=0;
 
     public bool isLevel4;
+     private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
     
     // Start is called before the first frame update
     void Start()
