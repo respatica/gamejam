@@ -11,6 +11,7 @@ TagManager:
   - box
   - pointZone
   - score
+  - pauseUI
   layers:
   - Default
   - TransparentFX

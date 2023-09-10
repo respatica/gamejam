@@ -8,8 +8,16 @@ public class LookAtPointer : MonoBehaviour
     public float xFlipCoordinate;
     public bool RightFacing;
 
+    private bool isPaused;
+
     private void Update()
     {
+        isPaused = GameObject.FindWithTag("pauseUI").GetComponent<pause>().paused;
+        if (isPaused)
+        {
+            return;
+        }
+        
         LAMouse();
         FlipX();
     }
