@@ -3303,16 +3303,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scorer: {fileID: 1437926481}
   levelFurniture:
-  - {fileID: 2213266497937891635}
-  - {fileID: 2186087914436025929}
-  - {fileID: 212762946276850820}
-  - {fileID: 1549262782158856286}
-  - {fileID: 209224716713132168}
-  - {fileID: 527427287158233514}
-  - {fileID: 303338501016471924}
-  - {fileID: 2027472604675828942}
-  - {fileID: 356146467954821824}
-  - {fileID: 5844838319806725031}
+  - {fileID: 8854214618364481344}
+  - {fileID: 8611872484174419808}
+  - {fileID: 1403103070404969888}
+  - {fileID: 5878573611704443323}
+  - {fileID: 1001305412326151859}
+  - {fileID: 4850632036952061771}
+  - {fileID: 2962897608204230214}
+  - {fileID: 3317336596041272960}
+  - {fileID: 5350612988225649516}
+  - {fileID: 4615564152686158871}
   savedActiveFurniture: []
 --- !u!4 &64911374195442411
 Transform:
@@ -4228,7 +4228,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &2413695222041878073
 GameObject:
   m_ObjectHideFlags: 0
@@ -5496,7 +5496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49611287f0d60da49b77c3fcb823fbae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: level2
+  sceneName: level3
   room1: {fileID: 5727704567669569520}
   room2: {fileID: 7003915158287576571}
   room3: {fileID: 2305192209192764442}

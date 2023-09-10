@@ -7,6 +7,7 @@ public class ballons : MonoBehaviour
     public float waitTime=2.0f;
     private float timer = 0.0f;
     [SerializeField] private GameObject levelloader;
+        [SerializeField] private GameObject house;
 
     public GameObject box;
     public Transform origin;
@@ -14,6 +15,8 @@ public class ballons : MonoBehaviour
     public int deliver=5;
     public int score;
     public int fallen=0;
+
+    public bool isLevel4;
     
     // Start is called before the first frame update
     void Start()
@@ -83,6 +86,12 @@ public class ballons : MonoBehaviour
     private void LevelOver()
     {
         levelloader.SetActive(true);
-        levelloader.GetComponent<transitionCue>().updatePoints();
+
+        if (!isLevel4)
+        {
+            levelloader.GetComponent<transitionCue>().updatePoints();
+        }
+
+        house.GetComponent<objectCounter>().EnableAtEnd();
     }
 }
