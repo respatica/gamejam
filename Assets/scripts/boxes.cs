@@ -49,7 +49,5 @@ public class boxes : MonoBehaviour
            //m_SpriteRenderer.setActive(false);
             
         }
-        
-            
     }
 }
