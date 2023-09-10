@@ -22,8 +22,7 @@ public class boxes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-          counted = false;
-          speed=0.012f;
+         speed=0.012f;
          audioSource = GetComponent<AudioSource>();
          m_SpriteRenderer = GetComponent<SpriteRenderer>();
     }
