@@ -8,7 +8,7 @@ public class scoreGen : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.transform.tag == "box") //&& !collider.gameObject.GetComponent<boxData>().counted)
+        if (collider.transform.tag == "box" && !collider.gameObject.GetComponent<boxData>().counted)
         {
             collider.gameObject.GetComponent<boxData>().counted = true;
             scorer.AddPoint();
