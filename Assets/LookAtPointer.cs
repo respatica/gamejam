@@ -8,12 +8,6 @@ public class LookAtPointer : MonoBehaviour
     public float xFlipCoordinate;
     public bool RightFacing;
 
-    private void Update()
-    {
-        LAMouse();
-        FlipX();
-    }
-    
     private void LAMouse()
     {
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - Bone1.position;
@@ -46,5 +40,11 @@ public class LookAtPointer : MonoBehaviour
             }
             RightFacing = false;
         }
+    }
+
+    private void Update()
+    {
+        LAMouse();
+        FlipX();
     }
 }
