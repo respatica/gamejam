@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6509207759993433345}
   - component: {fileID: 9183408393938771202}
   - component: {fileID: 3210504664182912901}
+  - component: {fileID: -8361475677793116233}
   m_Layer: 6
   m_Name: projectile
   m_TagString: arrow
@@ -171,3 +172,15 @@ PolygonCollider2D:
       - {x: 0.18293753, y: 0.04009028}
       - {x: 0.2315656, y: 0.14718853}
   m_UseDelaunayMesh: 0
+--- !u!114 &-8361475677793116233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4701774952016553701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64cbd9f07da72e6438891f323ca0fd22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

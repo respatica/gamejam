@@ -7,7 +7,7 @@ public class scoreTracker : MonoBehaviour
 {
     // dont destroy on load? 
 
-    private int score;
+    public int score;
     [SerializeField] TextMeshProUGUI scoreText;
 
     public void AddPoint()
