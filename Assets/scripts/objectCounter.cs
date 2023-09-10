@@ -6,10 +6,11 @@ public class objectCounter : MonoBehaviour
 {
     [SerializeField] private scoreTracker scorer;
     [SerializeField] private GameObject[] levelFurniture;
-    public List<GameObject> savedActiveFurniture; // add to dont destroy on load object
+    private playData data;
 
     public void Start()
     {
+        data = GameObject.FindWithTag("data").GetComponent<playData>();
         scorer.levelScore = 0;
     }
 
@@ -18,7 +19,7 @@ public class objectCounter : MonoBehaviour
         for (int i = 0; i > scorer.levelScore; i++) // for as many points as were made this level
         {
             levelFurniture[i].SetActive(true);
-            savedActiveFurniture.Add(levelFurniture[i]);
+            data.furniture.Add(levelFurniture[i]);
         }
     }
 }

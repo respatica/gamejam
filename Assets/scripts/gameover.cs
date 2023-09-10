@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class gameover : MonoBehaviour
 {
-    private scoreTracker scoreUI;
+    private playData data;
     [SerializeField] private GameObject win40;
     [SerializeField] private GameObject win30;
     [SerializeField] private GameObject lose20;
@@ -13,6 +13,7 @@ public class gameover : MonoBehaviour
 
     private void Start()
     {
+        data = GameObject.FindWithTag("data").GetComponent<playData>();
         win40.SetActive(false);
         win30.SetActive(false);
         lose20.SetActive(false);
@@ -21,15 +22,15 @@ public class gameover : MonoBehaviour
 
     public void determineGame()
     {
-        if (scoreUI.score == 40)
+        if (data.score == 40)
         {
             win40.SetActive(true);
         }
-        else if (scoreUI.score > 30)
+        else if (data.score > 30)
         {
             win30.SetActive(true);
         }
-        else if (scoreUI.score > 20)
+        else if (data.score > 20)
         {
             lose20.SetActive(true);          
         }
@@ -41,6 +42,8 @@ public class gameover : MonoBehaviour
 
     public void MainMenu()
     {
+        Destroy(data);
+
         SceneManager.LoadScene("start menu", LoadSceneMode.Single);
     }
 }

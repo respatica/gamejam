@@ -23,6 +23,9 @@ public class menu : MonoBehaviour
     }
     public void Mainmenu()
         {
+            GameObject data = GameObject.FindWithTag("data");
+            Destroy(data);
+            
             SceneManager.LoadScene("start menu", LoadSceneMode.Single);
         }
     public void exitGame()
