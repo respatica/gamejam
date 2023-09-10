@@ -7,7 +7,7 @@ public class ballons : MonoBehaviour
     public float waitTime=2.0f;
     private float timer = 0.0f;
     [SerializeField] private GameObject levelloader;
-        [SerializeField] private GameObject house;
+    [SerializeField] private GameObject house;
 
     public GameObject box;
     public Transform origin;
@@ -24,6 +24,7 @@ public class ballons : MonoBehaviour
         waitTime+=Random.Range(-0.80f, 1.0f);
         deliver+=Mathf.RoundToInt(Random.Range(-2.0f, 3.0f));
         levelloader.SetActive(false);
+        StartCoroutine(WaitForAnimation());
     }
 
     // Update is called once per frame
@@ -93,5 +94,10 @@ public class ballons : MonoBehaviour
         }
 
         house.GetComponent<objectCounter>().EnableAtEnd();
+    }
+
+    private IEnumerator WaitForAnimation()
+    {
+        yield return new WaitForSeconds(2);
     }
 }

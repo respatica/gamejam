@@ -1437,13 +1437,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a19aef8814a44cd49aa2f71b49e2b526, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 5.07
+  waitTime: 1.5
   levelloader: {fileID: 1353134137}
   house: {fileID: 3076844079924203165}
   box: {fileID: 5346293524367945468, guid: b9d2cf59d20dfaa49a65cef7bc7251e9, type: 3}
   origin: {fileID: 1667885719}
   numberofboxes: 0
-  deliver: 5
+  deliver: 10
   score: 0
   fallen: 0
   isLevel4: 0
