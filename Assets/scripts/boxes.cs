@@ -39,7 +39,7 @@ public class boxes : MonoBehaviour
     
     void  OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("HIT!");
+        //Debug.Log("HIT!");
              grav=1;
         if (collision.transform.tag == "arrow")
         {
@@ -63,7 +63,7 @@ public class boxes : MonoBehaviour
            
             
         }
-        if (collision.transform.tag == "floor")
+        if (collision.transform.tag == "pointZone")
         {
            audioSource.PlayOneShot(impact, 0.7F);
            succ=true;

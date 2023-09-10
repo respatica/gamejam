@@ -29,16 +29,29 @@ public class ballons : MonoBehaviour
         {
         boxe();
         timer=0f;
-        Debug.Log(timer);
+        //Debug.Log(timer);
         numberofboxes++;
         waitTime+=Random.Range(-0.02f, 4.0f);
         }
         }
+        win();
         
 ;
     }
     void boxe(){
         GameObject newBox = Instantiate(box,origin.position,origin.rotation);
         
+    }
+    public void AddPoint()
+    {
+        score++;
+    }
+    public void win()
+    {
+        if(numberofboxes>=deliver){
+            if (score>=Mathf.RoundToInt(deliver*0.8f)){
+                Debug.Log("win");
+            }else{Debug.Log("fail");}
+        }
     }
 }

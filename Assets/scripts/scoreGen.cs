@@ -5,13 +5,17 @@ using UnityEngine;
 public class scoreGen : MonoBehaviour
 {
     [SerializeField] private scoreTracker scorer;
+    [SerializeField] private ballons boxs;
 
-    private void OnTriggerEnter2D(Collider2D collider)
+
+    private void OnCollisionEnter2D(Collision2D collider)
     {
-        if (collider.transform.tag == "box" && !collider.gameObject.GetComponent<boxData>().counted)
-        {
-            collider.gameObject.GetComponent<boxData>().counted = true;
-            scorer.AddPoint();
+        Debug.Log(collider.gameObject.tag);
+        if (collider.gameObject.tag=="box"){
+             Debug.Log("HIToo!");
+             scorer.AddPoint();
+             boxs.AddPoint();
         }
+        
     }
 }
