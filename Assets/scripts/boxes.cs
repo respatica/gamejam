@@ -19,6 +19,7 @@ public class boxes : MonoBehaviour
     {
          box.GetComponent<Rigidbody2D>().gravityScale=grav;
     }
+    
     void  OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("HIT!");
