@@ -12,11 +12,13 @@ public class boxes : MonoBehaviour
     
     int grav=0;
     public GameObject box;
+    public bool counted;
 
     // Start is called before the first frame update
     void Start()
     {
-         speed=0.012f;
+          counted = false;
+          speed=0.012f;
          audioSource = GetComponent<AudioSource>();
          m_SpriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -30,6 +32,7 @@ public class boxes : MonoBehaviour
          }
          
     }
+    
     void  OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("HIT!");

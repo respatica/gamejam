@@ -8,6 +8,9 @@ TagManager:
   - damage
   - player
   - arrow
+  - box
+  - pointZone
+  - score
   layers:
   - Default
   - TransparentFX
