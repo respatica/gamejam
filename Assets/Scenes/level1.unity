@@ -4529,11 +4529,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6547540734973606910, guid: b3c86ef6a63da4746ab098e942cbdee3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 387
+      value: 481.5
       objectReference: {fileID: 0}
     - target: {fileID: 6547540734973606910, guid: b3c86ef6a63da4746ab098e942cbdee3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -191
+      value: -223.4
       objectReference: {fileID: 0}
     - target: {fileID: 8600061461248912946, guid: b3c86ef6a63da4746ab098e942cbdee3, type: 3}
       propertyPath: m_RootOrder
