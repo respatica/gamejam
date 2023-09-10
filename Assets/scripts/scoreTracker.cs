@@ -22,8 +22,7 @@ public class scoreTracker : MonoBehaviour
         score++;
         data.score = score;
         levelScore++; // this is reset to 0 every level from the objectCounter script
-        
-        scoreText.text = score.ToString();
 
+        scoreText.text = score.ToString();
     }
 }

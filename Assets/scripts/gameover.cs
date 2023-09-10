@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class gameover : MonoBehaviour
 {
     private playData data;
+    [SerializeField] private Animator anim;
     [SerializeField] private GameObject win40;
     [SerializeField] private GameObject win30;
     [SerializeField] private GameObject lose20;
@@ -14,6 +15,7 @@ public class gameover : MonoBehaviour
     private void Start()
     {
         data = GameObject.FindWithTag("data").GetComponent<playData>();
+
         win40.SetActive(false);
         win30.SetActive(false);
         lose20.SetActive(false);
@@ -22,6 +24,8 @@ public class gameover : MonoBehaviour
 
     public void determineGame()
     {
+        anim.Play("balloonsGameOver");
+
         if (data.score == 40)
         {
             win40.SetActive(true);
