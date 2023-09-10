@@ -7,11 +7,13 @@ public class boxes : MonoBehaviour
     public AudioSource audioSource;
     int grav=0;
     public GameObject box;
+    public bool counted;
 
     // Start is called before the first frame update
     void Start()
     {
-         audioSource = GetComponent<AudioSource>();
+          counted = false;
+          audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,9 +29,6 @@ public class boxes : MonoBehaviour
         if (collision.transform.tag == "arrow")
         {
            audioSource.Play();
-
         }
-        
-            
     }
 }
