@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class boxes : MonoBehaviour
 {
-    AudioSource audioSource;
+    public AudioSource audioSource;
     int grav=0;
     public GameObject box;
 
@@ -17,16 +17,18 @@ public class boxes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         box.gravityScale=grav;
+         box.GetComponent<Rigidbody2D>().gravityScale=grav;
     }
-    void OnCollisionEnter(Collision collision)
+    void  OnCollisionEnter2D(Collision2D collision)
     {
-        grav=1;
-        foreach (ContactPoint contact in collision.contacts)
+        Debug.Log("HIT!");
+             grav=1;
+        if (collision.transform.tag == "arrow")
         {
-            Debug.DrawRay(contact.point, contact.normal, Color.white);
+           audioSource.Play();
+
         }
-        if (collision.relativeVelocity.magnitude > 2)
-            audioSource.Play();
+        
+            
     }
 }
