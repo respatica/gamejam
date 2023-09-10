@@ -20,7 +20,7 @@ public class togame : MonoBehaviour
         if (timer > waitTime)
         {
           
-          SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+          SceneManager.LoadScene("level1", LoadSceneMode.Single);
         }
     }
 }
