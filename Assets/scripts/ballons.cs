@@ -12,6 +12,7 @@ public class ballons : MonoBehaviour
     public int numberofboxes;
      public int deliver=5;
      public int score;
+     public int fallen=0;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,8 +34,16 @@ public class ballons : MonoBehaviour
         numberofboxes++;
         waitTime+=Random.Range(-0.02f, 4.0f);
         }
+        }else{
+            
+        timer += Time.deltaTime;
+        
+            if (timer > 5f){
+              win();   
+            }
+           
         }
-        win();
+        
         
 ;
     }
@@ -46,12 +55,24 @@ public class ballons : MonoBehaviour
     {
         score++;
     }
+    public void AddCollide()
+    {
+        fallen++;
+    }
     public void win()
     {
         if(numberofboxes>=deliver){
             if (score>=Mathf.RoundToInt(deliver*0.8f)){
                 Debug.Log("win");
-            }else{Debug.Log("fail");}
+            }else if(score<=Mathf.RoundToInt(deliver*0.4f)){
+                Debug.Log("fail");
+            }
+            else {
+            if (timer > 25f){
+                Debug.Log("so close");
+                }
+            }
+            
         }
     }
 }
