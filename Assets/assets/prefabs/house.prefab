@@ -184,7 +184,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8481795008459817538
 Transform:
   m_ObjectHideFlags: 0
@@ -2756,7 +2756,7 @@ Transform:
   - {fileID: 5014958237602060306}
   - {fileID: 3087571524964101361}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!210 &1871284053554199481
 SortingGroup:
@@ -2803,7 +2803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49611287f0d60da49b77c3fcb823fbae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: level1
+  sceneName: level
   room1: {fileID: 2913405380731883340}
   room2: {fileID: 441490809198187847}
   room3: {fileID: 8714230185009953958}
