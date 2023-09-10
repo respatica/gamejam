@@ -67,11 +67,11 @@ public class ballons : MonoBehaviour
 
     public void win()
     {
-        LevelOver();
+        
 
         if(numberofboxes>=deliver){
             if (score>=Mathf.RoundToInt(deliver*0.8f)){
-                Debug.Log("win");
+                Debug.Log("win");LevelOver();
             }else if(score<=Mathf.RoundToInt(deliver*0.4f)){
                 Debug.Log("fail");
             }
