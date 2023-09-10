@@ -15,7 +15,7 @@ public class dropHouseController : MonoBehaviour
     public AudioClip impact;
     public float waitTime=3.0f;
     private float timer = 0.0f;
-
+private bool play=true;
     private void Start()
     {
         anim = this.gameObject.GetComponent<Animator>();
@@ -57,9 +57,11 @@ public class dropHouseController : MonoBehaviour
      void Update()
     {
         timer += Time.deltaTime;
-        if (timer == waitTime)
+        if (timer >= waitTime&&play)
         {
              audioSource.PlayOneShot(impact, 0.7F);
+             play=false;
+             
         }   
     }
     
