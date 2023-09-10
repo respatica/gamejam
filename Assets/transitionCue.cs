@@ -13,24 +13,17 @@ public class transitionCue : MonoBehaviour
     [SerializeField] private TextMeshProUGUI totalpoints;
     [SerializeField] private TextMeshProUGUI levelpoints;
 
-
     public void Start()
     {
         currentScene = SceneManager.GetActiveScene().buildIndex;
-        lvlOverCanvas.SetActive(false);
         scorer = GameObject.FindWithTag("score").GetComponent<scoreTracker>();
+        updatePoints();
     }
 
     public void LoadNextScene()
     {
         int nextScene = currentScene + 1;
         SceneManager.LoadSceneAsync(nextScene);
-    }
-
-    public void OpenEndLevelUI()
-    {
-        lvlOverCanvas.SetActive(true);
-        updatePoints();
     }
 
     public void updatePoints()

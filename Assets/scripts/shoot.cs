@@ -9,6 +9,7 @@ public class shoot : MonoBehaviour
     public Transform shotPoint;
 
     public GameObject point;
+    public int ptSortingLayer;
     GameObject[] points;
     public int numberOfPoints;
     public float spaceBetweenPoint;
@@ -22,6 +23,7 @@ public class shoot : MonoBehaviour
         points=new GameObject[numberOfPoints];
         for (int i =0;i<numberOfPoints;i++){
             points[i]=Instantiate(point,shotPoint.position,Quaternion.identity);
+            points[i].GetComponent<SpriteRenderer>().sortingOrder = ptSortingLayer;
         }
     }
 

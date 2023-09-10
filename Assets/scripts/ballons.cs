@@ -6,19 +6,21 @@ public class ballons : MonoBehaviour
 {
     public float waitTime=2.0f;
     private float timer = 0.0f;
+    [SerializeField] private GameObject levelloader;
 
     public GameObject box;
     public Transform origin;
     public int numberofboxes;
-     public int deliver=5;
-     public int score;
-     public int fallen=0;
+    public int deliver=5;
+    public int score;
+    public int fallen=0;
+    
     // Start is called before the first frame update
     void Start()
     {
         waitTime+=Random.Range(-0.80f, 1.0f);
         deliver+=Mathf.RoundToInt(Random.Range(-2.0f, 3.0f));
-        
+        levelloader.SetActive(false);
     }
 
     // Update is called once per frame
@@ -39,9 +41,8 @@ public class ballons : MonoBehaviour
         timer += Time.deltaTime;
         
             if (timer > 5f){
-              win();   
+              win();
             }
-           
         }
         
         
@@ -59,8 +60,11 @@ public class ballons : MonoBehaviour
     {
         fallen++;
     }
+
     public void win()
     {
+        LevelOver();
+
         if(numberofboxes>=deliver){
             if (score>=Mathf.RoundToInt(deliver*0.8f)){
                 Debug.Log("win");
@@ -74,5 +78,11 @@ public class ballons : MonoBehaviour
             }
             
         }
+    }
+
+    private void LevelOver()
+    {
+        levelloader.SetActive(true);
+        levelloader.GetComponent<transitionCue>().updatePoints();
     }
 }
