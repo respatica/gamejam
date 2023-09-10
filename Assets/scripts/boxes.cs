@@ -5,6 +5,9 @@ using UnityEngine;
 public class boxes : MonoBehaviour
 {
     public AudioSource audioSource;
+    public AudioClip impact;
+    public AudioClip pop;
+    public AudioClip fall;
     public float speed=0.012f;
     public float speedie=3f;
     public bool hit=false;
@@ -13,6 +16,8 @@ public class boxes : MonoBehaviour
     int grav=0;
     public GameObject box;
     public bool counted;
+    public bool fail=false;
+    public bool succ=false;
 
     // Start is called before the first frame update
     void Start()
@@ -40,14 +45,34 @@ public class boxes : MonoBehaviour
         if (collision.transform.tag == "arrow")
         {
            m_SpriteRenderer.sprite=null;
-           audioSource.Play();
-           hit=true;
+           //audioSource.Play();
+           
+           if(!hit){
+           audioSource.PlayOneShot(pop, 0.7F);
+           audioSource.PlayOneShot(fall, 0.9F);
+           hit=true; 
+           }
+           
+
 
         }
         if (collision.transform.tag == "damage")
         {
-           //m_SpriteRenderer.setActive(false);
+           audioSource.PlayOneShot(impact, 0.7F);
+           fail=true;
+           span();
+           
             
         }
+        if (collision.transform.tag == "floor")
+        {
+           audioSource.PlayOneShot(impact, 0.7F);
+           succ=true;
+            span();
+        }
+    }
+    void span(){
+        box.GetComponent<Rigidbody2D>().constraints=RigidbodyConstraints2D.FreezeAll;
+        box.GetComponent<BoxCollider2D>().enabled=false;
     }
 }
