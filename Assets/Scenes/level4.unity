@@ -1541,7 +1541,11 @@ MonoBehaviour:
   waitTime: 0.8
   levelloader: {fileID: 875909595}
   house: {fileID: 3076844079924203165}
-  box: {fileID: 5346293524367945468, guid: b9d2cf59d20dfaa49a65cef7bc7251e9, type: 3}
+  box:
+  - {fileID: 507315358914158367, guid: c84e71aa02aff39498298fc049b8ed15, type: 3}
+  - {fileID: 5346293524367945468, guid: b9d2cf59d20dfaa49a65cef7bc7251e9, type: 3}
+  - {fileID: 5346293524367945468, guid: 3b2fa67743a1d674c8091b962f127dcd, type: 3}
+  numSelectors: 3
   origin: {fileID: 1667885719}
   numberofboxes: 0
   deliver: 10

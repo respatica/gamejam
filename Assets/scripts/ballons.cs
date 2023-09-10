@@ -9,7 +9,8 @@ public class ballons : MonoBehaviour
     [SerializeField] private GameObject levelloader;
     [SerializeField] private GameObject house;
 
-    public GameObject box;
+    public GameObject[] box;
+    public int numSelectors = 3;
     public Transform origin;
     public int numberofboxes;
     public int deliver=5;
@@ -21,6 +22,7 @@ public class ballons : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //box=new GameObject[numSelectors];
         waitTime+=Random.Range(-0.80f, 1.0f);
         deliver+=Mathf.RoundToInt(Random.Range(-2.0f, 3.0f));
         levelloader.SetActive(false);
@@ -38,7 +40,7 @@ public class ballons : MonoBehaviour
         timer=0f;
         //Debug.Log(timer);
         numberofboxes++;
-        waitTime+=Random.Range(-0.02f, 4.0f);
+        waitTime=Random.Range(1.45f, 6.0f);
         }
         }else{
             
@@ -53,7 +55,8 @@ public class ballons : MonoBehaviour
 ;
     }
     void boxe(){
-        GameObject newBox = Instantiate(box,origin.position,origin.rotation);
+        int i= Random.Range(0, numSelectors);
+        GameObject newBox = Instantiate(box[i],origin.position,origin.rotation);
         
     }
     public void AddPoint()
