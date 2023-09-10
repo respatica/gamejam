@@ -13,12 +13,12 @@ public class dropHouseController : MonoBehaviour
 
     private void Start()
     {
+        
+        //room1.SetActive(false);
+        //room2.SetActive(false);
+        //room3.SetActive(false);
+        //room4.SetActive(false);
         anim = this.gameObject.GetComponent<Animator>();
-        room1.SetActive(false);
-        room2.SetActive(false);
-        room3.SetActive(false);
-        room4.SetActive(false);
-
 
         switch (sceneName)
         {
@@ -30,6 +30,7 @@ public class dropHouseController : MonoBehaviour
                 room1.SetActive(true);
                 room2.SetActive(true);
                 anim.Play("dropRoom2");
+                room2.SetActive(true);
                 break;
             case "level3":
                 room1.SetActive(true);
