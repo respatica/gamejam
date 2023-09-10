@@ -54,12 +54,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 507315358914158367, guid: c84e71aa02aff39498298fc049b8ed15, type: 3}
       propertyPath: m_Name
-      value: Square Variant
+      value: box2
+      objectReference: {fileID: 0}
+    - target: {fileID: 507315358914158367, guid: c84e71aa02aff39498298fc049b8ed15, type: 3}
+      propertyPath: m_TagString
+      value: box
       objectReference: {fileID: 0}
     - target: {fileID: 904894922676161866, guid: c84e71aa02aff39498298fc049b8ed15, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ff6182e6d99652743a22b3d147ebcfc6, type: 3}
+    - target: {fileID: 904894922676161866, guid: c84e71aa02aff39498298fc049b8ed15, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2130724523066632111, guid: c84e71aa02aff39498298fc049b8ed15, type: 3}
       propertyPath: m_Sprite
       value: 

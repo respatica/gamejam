@@ -15,7 +15,7 @@ public class boxes : MonoBehaviour
     
     int grav=0;
     public GameObject box;
-    public bool counted;
+    public bool counted=false;
     public bool fail=false;
     public bool succ=false;
 
@@ -47,7 +47,7 @@ public class boxes : MonoBehaviour
     
     void  OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("HIT!");
+        //Debug.Log("HIT!");
              grav=1;
         if (collision.transform.tag == "arrow")
         {
@@ -71,15 +71,18 @@ public class boxes : MonoBehaviour
            
             
         }
-        if (collision.transform.tag == "floor")
+        if (collision.transform.tag == "pointZone")
         {
+            Debug.Log("hito");
            audioSource.PlayOneShot(impact, 0.7F);
            succ=true;
             span();
+            
         }
     }
     void span(){
         box.GetComponent<Rigidbody2D>().constraints=RigidbodyConstraints2D.FreezeAll;
         box.GetComponent<BoxCollider2D>().enabled=false;
+        counted=true;
     }
 }
