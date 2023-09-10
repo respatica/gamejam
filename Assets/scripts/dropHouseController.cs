@@ -11,6 +11,11 @@ public class dropHouseController : MonoBehaviour
     [SerializeField] private GameObject room3;
     [SerializeField] private GameObject room4;
 
+    public AudioSource audioSource;
+    public AudioClip impact;
+    public float waitTime=3.0f;
+    private float timer = 0.0f;
+
     private void Start()
     {
         anim = this.gameObject.GetComponent<Animator>();
@@ -25,6 +30,7 @@ public class dropHouseController : MonoBehaviour
             case "level1":
                 room1.SetActive(true);
                 anim.Play("dropRoom1");
+                
                 break;
             case "level2":
                 room1.SetActive(true);
@@ -46,5 +52,15 @@ public class dropHouseController : MonoBehaviour
                 anim.Play("dropRoom4");
                 break;
         }
+        
     }
+     void Update()
+    {
+        timer += Time.deltaTime;
+        if (timer == waitTime)
+        {
+             audioSource.PlayOneShot(impact, 0.7F);
+        }   
+    }
+    
 }
