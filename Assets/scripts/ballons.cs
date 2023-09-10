@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ballons : MonoBehaviour
 {
-    public float waitTime=2.0f;
+    public float waitTime=4.0f;
     private float timer = 0.0f;
     [SerializeField] private GameObject levelloader;
     [SerializeField] private GameObject house;
