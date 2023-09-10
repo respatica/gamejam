@@ -26,7 +26,6 @@ public class ballons : MonoBehaviour
         waitTime+=Random.Range(-0.80f, 1.0f);
         deliver+=Mathf.RoundToInt(Random.Range(-2.0f, 3.0f));
         levelloader.SetActive(false);
-        StartCoroutine(WaitForAnimation());
     }
 
     // Update is called once per frame
@@ -70,11 +69,11 @@ public class ballons : MonoBehaviour
 
     public void win()
     {
-        
+        LevelOver();
 
         if(numberofboxes>=deliver){
             if (score>=Mathf.RoundToInt(deliver*0.8f)){
-                Debug.Log("win");LevelOver();
+                Debug.Log("win");
             }else if(score<=Mathf.RoundToInt(deliver*0.4f)){
                 Debug.Log("fail");
             }
@@ -95,12 +94,9 @@ public class ballons : MonoBehaviour
         {
             levelloader.GetComponent<transitionCue>().updatePoints();
         }
-
-        house.GetComponent<objectCounter>().EnableAtEnd();
-    }
-
-    private IEnumerator WaitForAnimation()
-    {
-        yield return new WaitForSeconds(2);
+        else
+        {
+            levelloader.GetComponent<gameover>().determineGame();
+        }
     }
 }

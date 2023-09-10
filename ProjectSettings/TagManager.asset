@@ -12,6 +12,7 @@ TagManager:
   - pointZone
   - score
   - pauseUI
+  - data
   layers:
   - Default
   - TransparentFX
