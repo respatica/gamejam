@@ -26,7 +26,5 @@ public class MusicMaster : MonoBehaviour
         if (volumeLabel!=null){
             volumeLabel.text = Mathf.Round(value*100f).ToString()+"%";
         }
-        
     }
-    
 }

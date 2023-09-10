@@ -13,6 +13,9 @@ public class shoot : MonoBehaviour
     public int numberOfPoints;
     public float spaceBetweenPoint;
     Vector2 direct;
+
+    private bool isPaused;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,12 +23,17 @@ public class shoot : MonoBehaviour
         for (int i =0;i<numberOfPoints;i++){
             points[i]=Instantiate(point,shotPoint.position,Quaternion.identity);
         }
-        
     }
 
     // Update is called once per frame
     void Update()
     {
+        isPaused = GameObject.FindWithTag("pauseUI").GetComponent<pause>().paused;
+        if (isPaused)
+        {
+            return;
+        }
+
         Vector2 bowPos=transform.position;
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         float distace=Mathf.Sqrt(Mathf.Pow(mousePosition.x-bowPos.x,2)+Mathf.Pow(mousePosition.y-bowPos.y,2));

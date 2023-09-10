@@ -11,13 +11,15 @@ public class boxes : MonoBehaviour
     public float speed=0.012f;
     public float speedie=3f;
     public bool hit=false;
-     SpriteRenderer m_SpriteRenderer;
+    SpriteRenderer m_SpriteRenderer;
     
     int grav=0;
     public GameObject box;
     public bool counted;
     public bool fail=false;
     public bool succ=false;
+
+    private bool isPaused;
 
     // Start is called before the first frame update
     void Start()
@@ -30,10 +32,16 @@ public class boxes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         box.GetComponent<Rigidbody2D>().gravityScale=grav;
-         if (!hit){
-            this.transform.position=new Vector2(this.transform.position.x+speed,(this.transform.position.y*Mathf.Cos(Time.deltaTime*speedie)));
-         }
+        isPaused = GameObject.FindWithTag("pauseUI").GetComponent<pause>().paused;
+        if (isPaused)
+        {
+            return;
+        }
+
+        box.GetComponent<Rigidbody2D>().gravityScale=grav;
+        if (!hit){
+        this.transform.position=new Vector2(this.transform.position.x+speed,(this.transform.position.y*Mathf.Cos(Time.deltaTime*speedie)));
+        }
          
     }
     
