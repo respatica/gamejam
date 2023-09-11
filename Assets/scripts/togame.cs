@@ -23,4 +23,9 @@ public class togame : MonoBehaviour
           SceneManager.LoadScene("level1", LoadSceneMode.Single);
         }
     }
+
+    public void SkipCutscene()
+    {
+      SceneManager.LoadScene("level1", LoadSceneMode.Single);
+    }
 }

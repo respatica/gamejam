@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ballons : MonoBehaviour
 {
@@ -18,7 +19,8 @@ public class ballons : MonoBehaviour
     public int fallen=0;
 
     public bool isLevel4;
-     private void Awake()
+
+    private void Awake()
     {
         DontDestroyOnLoad(gameObject);
     }
@@ -35,6 +37,12 @@ public class ballons : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (SceneManager.GetActiveScene().name == "IntroCutscene")
+        {
+            print("matched");
+            Destroy(gameObject);
+        }
+
         if (numberofboxes<deliver){
         timer += Time.deltaTime;
         if (timer > waitTime)
